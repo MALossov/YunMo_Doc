@@ -5,8 +5,8 @@
 
 #show heading : it => {
   pagebreak()
-  set align(center)
-  text(font:heiti, size: font_size.xiaoer)[#it]
+  // set align(center)
+  text(font:songti, size: font_size.xiaosi)[#it]
   v(1em)
   par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
 }
@@ -19,4 +19,4 @@
   v(5pt)
 }
 
-#include "../contents/appendix.typ"
+#include "../contents/6Appendix.typ"
