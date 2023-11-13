@@ -1,7 +1,6 @@
 #import "font.typ": *
 
 
-
 #let Thesis(
   // 参考文献bib文件路径
 ) = {
@@ -16,32 +15,17 @@
               #set text(size: 10pt, baseline: -3pt)
               #counter(page).display(
               "1")
-            ]
+            ],
+          header: align(left)[  // 页眉左侧需要放入 images 文件夹中的图片 Header.png
+      #image("images/Header.png", width: 50mm)
+    ],
   )
 
-  // 封面
-  include "cover.typ"
-
-  set page(
-    header: {
-      set text(font: songti, 10pt, baseline: 8pt, spacing: 3pt)
-      set align(center)
-      [上海大学毕业论文(设计)]
-      line(length: 100%, stroke: 0.1pt)
-    }
-  )
-
-  // 目录
-  include "toc.typ"
-  
-  // 摘要
-  include "abstract.typ"
+  // 标题
+  include "report_title.typ"
 
   // 正文
   include "body.typ"
-
-  // 致谢
-  include "acknowledgement.typ"
 
   // 参考文献
   include "reference.typ"

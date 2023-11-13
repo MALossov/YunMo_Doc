@@ -1,7 +1,6 @@
 #import "font.typ": *
 #import "utils.typ": *
 
-#pagebreak()
 #counter(page).update(1)
 
 // 章节计数器，记录公式层级
@@ -95,7 +94,7 @@
 
 #set heading(numbering: (..nums) => 
                           if nums.pos().len() == 1 {
-                            "第"+zhnumbers(nums.pos().first()) +"章"
+                            "第"+zhnumbers(nums.pos().first()) +"部分"
                           } 
                           else {
                             nums.pos().map(str).join(".")
@@ -103,8 +102,7 @@
 
 #show heading: it =>  {
   if it.level == 1 {
-    set align(center)
-    set text(font:heiti, size: font_size.xiaoer, weight: "regular")
+    set text(font:songti, size: font_size.sihao, weight: 600)
     counter_chapter.step()
     counter_equation.update(())
     counter_image.update(())
@@ -112,7 +110,7 @@
     it
     par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
   } else if it.level == 2 {
-    set text(font:heiti, size: font_size.sihao, weight: "regular")
+    set text(font:songti, size: font_size.xiaosi, weight: "regular")
     it
     par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
   } else if it.level == 3 {

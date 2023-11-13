@@ -1,7 +1,8 @@
 // 字体定义
-#let heiti = ("Times New Roman", "Heiti SC", "Heiti TC")
-#let songti = ("Times New Roman", "Songti SC")
-#let kaiti = ("Times New Roman", "Kaiti SC")
+#let heiti = ("Times New Roman", "Noto Sans CJK SC")
+#let songti = ("Times New Roman", "Noto Serif CJK SC")
+#let kaiti = ("Times New Roman", "HYKaiTi")
+#let fangsong = ("Times New Roman", "HYFangSong")
 
 // 字号设置
 // -----------------
