@@ -28,9 +28,9 @@
     bottom: 0.5em,
     x: 2em,
     grid(
-      columns: (1fr,) * calc.min(3, authors.len()),
+      columns: (1fr,) * (calc.min(3, authors.len())),
       gutter: 1em,
-      ..authors.map(author => align(center, strong(author))),
+      ..authors.map(author => align(center, strong(author)+";")),
     ),
   )
 }
