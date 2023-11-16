@@ -144,6 +144,9 @@ if nums.pos().len() == 1 {
 #set enum(indent: 2em, body-indent: 0.5em, tight: true)
 #set list(indent: 2em, body-indent: 0.5em, tight: true)
 
+#show raw: set text(font: ("JetBrainsMono NF","Noto Sans CJK SC"),size: font_size.xiaowu)
+// #show raw: set par(leading: 1em,hanging-indent: 3em)
+
 #include "../contents/1OverView.typ"
 #include "../contents/2BuildUp.typ"
 #include "../contents/3FinishPoint.typ"

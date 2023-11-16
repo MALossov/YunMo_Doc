@@ -162,4 +162,7 @@ if nums.pos().len() == 1 {
   v(5pt)
 }
 
+#show raw: set text(font: ("JetBrainsMono NF","Noto Sans CJK SC"),size: font_size.xiaowu)
+#show raw: set par(leading: 0.8em,hanging-indent: 3em)
+
 #include "../contents/6Appendix.typ"
