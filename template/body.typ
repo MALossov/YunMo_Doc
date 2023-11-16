@@ -122,6 +122,11 @@ if nums.pos().len() == 1 {
     it
     par(leading: 1em)[#text(size: 0.0em)[#h(0.0em)]]
   } else if it.level == 3 {
+    set text(font: heiti, size: font_size.xiaosi, weight: "bold")
+    it
+    par(leading: 1em)[#text(size: 0.0em)[#h(0.0em)]]
+  }
+  else if it.level == 4 {
     set text(font: heiti, size: font_size.xiaosi, weight: "regular")
     it
     par(leading: 1em)[#text(size: 0.0em)[#h(0.0em)]]
