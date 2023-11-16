@@ -26,8 +26,6 @@
   caption: "片外外设和对应接口模块一览"
 )<外设一览表>
 
-== 各模块介绍
-
 ==== 主要外设
 
 根据@外设一览表 所示， 面对各个外设、FPGA板卡主要完成的任务大略如下：
@@ -61,7 +59,7 @@
   caption: "视频处理模块功能"
 )<VIP模块功能>
 
-=== 视频上位机模块
+==== 视频上位机模块
 
 为实现功能，我们构建了如@上位机 所示的上位机模块：
 
@@ -75,7 +73,7 @@
 
 上位机使用的接收UDP数据格式为：
 
-+ *帧头*：十六进制发送`0xf05aa50f`四个字节,进行表示：这个UDP报文为需要被上位机解析的报文。
++ *帧头*：如果该次发送为首次发送，则会十六进制发送`0xf05aa50f`四个字节,进行表示：这个UDP报文为需要被上位机解析的报文。而上位机也会继续解析余下这一帧的全部报文。
 + *分辨率信息*：如果该次发送为首次发送，则会接着帧头按照16进制转换发送分辨率信息$640 times 480$,表示本帧的分辨率。
 + *帧内容*：以太网会按照行内容发送帧内容，每行的长度为 $640$ 个标准 RGB5-6-5的数据。
 
@@ -85,3 +83,58 @@
   image("../images/UDP_Wiresharked.png"),
   caption: "以太网抓帧UDP报文表"
 )<以太网抓帧>
+
+== 各模块介绍
+
+=== UDP模块
+
+MII （Media Independent Interface（介质无关接口）或称为媒体独立接口，它是IEEE-802.3定义的以太网行业标准。用以连接以太网MAC层和PHY芯片，常用接口有：MII、RMII、SMII、GMII、RGMII。@_19
+
+在本次UDP的实验当中、我们使用的芯片 _RTL8201F_ 使用的是以太网当中的RMII接口， @RMII物理接口示意 为 RMII 接口连接示意图。
+
+#figure(
+  image("../images/RMII_PHY.png",width:8cm),
+  caption: "RMII物理接口示意"
+)<RMII物理接口示意>
+
+#figure(
+  image("../images/UDP_Diagram.svg"),
+  caption: "UDP模块框图"
+)<UDP模块框图>
+
+#figure(
+  image("../images/UDP_State.svg",width: 12cm),
+  caption: "UDP模块状态转移图"
+)<UDP模块状态转移图>
+
+=== CMOS图像收集模块
+
+#figure(
+  image("../images/cmos_i2c.svg",width: 12cm),
+  caption: "CMOS配置和数据传输框图"
+)<CMOS配置和数据传输框图>
+
+=== 图像存储/数据流转移模块
+
+#figure(
+  image("../images/Memory_IP.svg",width: 12cm),
+  caption: "存储模块系统框图"
+)<存储模块系统框图>
+
+=== 图像处理模块
+
+#figure(
+  image("../images/vip.svg"),
+  caption:"图像数据处理模块"
+)<图像数据处理模块>
+
+
+=== 模式切换模块
+
+在模式切换模块当中，
+
+#figure(
+  image("../images/module_shift.svg",width: 12cm),
+  caption: "模式切换模块框图"
+)<模式切换模块框图>
+
