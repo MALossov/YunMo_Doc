@@ -116,25 +116,25 @@ if nums.pos().len() == 1 {
     counter_image.update(())
     counter_table.update(())
     it
-    par(leading: 1em)[#text(size: 0.0em)[#h(0.0em)]]
+    par(leading: 0.5em)[#text(size: 0.0em)[#h(0.0em)]]
   } else if it.level == 2 {
     set text(font: songti, size: font_size.xiaosi, weight: "bold")
     it
-    par(leading: 1em)[#text(size: 0.0em)[#h(0.0em)]]
+    par(leading: 0.5em)[#text(size: 0.0em)[#h(0.0em)]]
   } else if it.level == 3 {
     set text(font: heiti, size: font_size.xiaosi, weight: "bold")
     it
-    par(leading: 1em)[#text(size: 0.0em)[#h(0.0em)]]
+    par(leading: 0.5em)[#text(size: 0.0em)[#h(0.0em)]]
   }
   else if it.level == 4 {
     set text(font: heiti, size: font_size.xiaosi, weight: "regular")
     it
-    par(leading: 1em)[#text(size: 0.0em)[#h(0.0em)]]
+    par(leading: 0.5em)[#text(size: 0.0em)[#h(0.0em)]]
   }
 }
 
 // 设置正文格式
-#set text(font: songti, size: font_size.xiaosi,weight: "regular",lang:"zh")
+#set text(font: songti, size: font_size.xiaosi,weight: "regular",lang:"counter_equation")
 #set par(justify: false, leading: 1em, first-line-indent: 2em,)
 #show par: it => {
   it
@@ -148,6 +148,16 @@ if nums.pos().len() == 1 {
 // #show raw: set par(leading: 1em,hanging-indent: 3em)
 
 #include "../contents/1OverView.typ"
+#pagebreak()
+
 #include "../contents/2BuildUp.typ"
+#pagebreak()
 #include "../contents/3FinishPoint.typ"
+#pagebreak()
 #include "../contents/4Conclusion.typ"
+
+#include "reference.typ"
+
+#pagebreak()
+
+#include "../contents/6Appendix.typ"

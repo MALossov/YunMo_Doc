@@ -28,7 +28,7 @@
   include "body.typ"
 
   // 参考文献
-  include "reference.typ"
+  // include "reference.typ"
 
   //附录
   include "appendix.typ"
